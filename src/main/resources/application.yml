@@ -1,0 +1,31 @@
+
+server:
+  port: 8090
+  servlet:
+    #context-path: /backend
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/bulutmdyemek?useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 1234
+    sql-script-encoding: UTF-8
+  http:
+    encoding: UTF-8
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  jackson:
+    default-property-inclusion: non_null
+  jmx:
+    enabled: false
+  servlet:
+    multipart:
+      enabled: true
+
+  file:
+    upload-dir: ./uploads
